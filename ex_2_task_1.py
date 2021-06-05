@@ -34,12 +34,37 @@
 # As proof, please manually copy/paste the console output for one run into a file called
 # results1.txt
 
+s = "pinaradanir96@gmail.com"
+
+email = s.split("@") 
+username = email[0]
+tech = email[1].split(".")
+hosting = tech[0]
+ending = tech[1]
+
+#print(username, hosting, ending)
+
+
 def is_valid_email_address(s):
-    
     # your code here
-
+    if len(username) < 3:
+        print("Sorry, username too short.")
+    elif len(username) > 16:
+        print("Sorry, username too long.")
     
+    if len(hosting) < 2 or len(hosting) > 8:
+        print("Sorry, not a valid email hosting name.")
 
+    if ending != "com" or ending != "edu" or ending != "org" or ending != "gov":
+        print("Sorry, invalid ending.")
+        
+    else:
+        print("Valid email address! Thank you.")
+
+
+    # A must have between 3 and 16 alpha numeric chars (test: isalnum())
+# B must have between 2 and 8 alpha numeric chars (test: isalnum()) 
+# C must be one of these:  com edu org gov 
 
     
 
