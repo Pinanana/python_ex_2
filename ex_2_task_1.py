@@ -53,13 +53,10 @@ def is_valid_email_address(s):
         print("Sorry, username too short.")
     elif len(username) > 16:
         print("Sorry, username too long.")
-    
     if len(hosting) < 2 or len(hosting) > 8:
         print("Sorry, not a valid email hosting name.")
-
     if ending not in validending :
         print("Sorry, invalid ending.")
-
     else:
         print("Valid email address! Thank you.")
 

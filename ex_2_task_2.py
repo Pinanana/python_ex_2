@@ -30,12 +30,29 @@
 
 # import your function from the previous .py file as a module (you can abbreviate it)
 # use ex_2_task_2 here instead once your function works!
-from ex_2_task_1_solution import is_valid_email_address as is_valid 
+from ex_2_task_1 import is_valid_email_address as is_valid 
 
 gave_up = False
 attempts_left = 3
 
 # your code - start
+
+count = 1
+
+while count <= 3:
+    print("Please enter your email address.")
+    s = input()
+    print("Thank you, now checking for validity of", s)
+    is_valid(s)
+    if is_valid(s) == "Valid email address! Thank you.":
+        print("Validity check is done.")
+    while is_valid(s) != "Valid email address! Thank you.":
+        print("Please try again.")
+        count = count + 1
+    else: 
+        print("Sorry, you have run out of trials. You can exit now.")
+
+
 
 
 # your code - end
