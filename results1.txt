@@ -1,0 +1,9 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\DELL\Desktop\FKIN IMPORTANT\-6-\HCI 584x\hw\python_ex_2>  & 'C:\Users\DELL\AppData\Local\Programs\Python\Python37\python.exe' 'c:\Users\DELL\.vscode\extensions\ms-python.python-2021.5.842923320\pythonFiles\lib\python\debugpy\launcher' '57067' '--' 'c:\Users\DELL\Desktop\FKIN IMPORTANT\-6-\HCI 584x\hw\python_ex_2\ex_2_task_1.py'
+pinaradanir96 gmail com        
+Valid email address! Thank you.
+Valid email address! Thank you.
