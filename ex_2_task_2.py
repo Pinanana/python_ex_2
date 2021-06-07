@@ -37,26 +37,25 @@ attempts_left = 3
 
 # your code - start
 
-count = 1
+s = input("Please enter your email address: ")
 
-while count <= 3:
-    print("Please enter your email address.")
-    s = input()
+def email_entry_countdown(s):
     print("Thank you, now checking for validity of", s)
     is_valid(s)
     if is_valid(s) == "Valid email address! Thank you.":
-        print("Validity check is done.")
-    while is_valid(s) != "Valid email address! Thank you.":
-        print("Please try again.")
-        count = count + 1
-    else: 
-        print("Sorry, you have run out of trials. You can exit now.")
+        print("Validity check is successful.")
+    else:
+        while attempts_left != 0: #it says there is a problem here but I don't understand why.
+            print("Please try again.")
+            attempts_left = attempts_left - 1
+        else: 
+            print("Sorry, you have run out of trials. You can exit now.")
 
-
+email_entry_countdown(s)
 
 
 # your code - end
-if not gave_up:
-    print("valid email", email)
-else:
-    print("invalid email", email)
+#if not gave_up:
+#    print("valid email", email)
+#else:
+#    print("invalid email", email)
