@@ -34,7 +34,7 @@
 # As proof, please manually copy/paste the console output for one run into a file called
 # results1.txt
 
-s = "pinaradanir96@gmail.com"
+s = input("Please enter an email address: ") #"pinaradanir96@gmail.com"
 
 email = s.split("@") 
 username = email[0]
@@ -53,9 +53,9 @@ def is_valid_email_address(s):
         print("Sorry, username too short.")
     elif len(username) > 16:
         print("Sorry, username too long.")
-    if len(hosting) < 2 or len(hosting) > 8:
+    elif len(hosting) < 2 or len(hosting) > 8:
         print("Sorry, not a valid email hosting name.")
-    if ending not in validending :
+    elif ending not in validending :
         print("Sorry, invalid ending.")
     else:
         print("Valid email address! Thank you.")
