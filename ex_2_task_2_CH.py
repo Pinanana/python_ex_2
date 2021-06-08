@@ -25,67 +25,47 @@
 
 # Once you're solved this, run some tests to show me that it works. 
 # Again, manually copy/paste the console output in a text file (results2.txt)
-"""
-import ex_2_task_1
-print(dir(ex_2_task_1))
-print(ex_2_task_1.is_valid_email_address("bla@bla.com"))
-"""
+
+
+
 # import your function from the previous .py file as a module (you can abbreviate it)
 # use ex_2_task_2 here instead once your function works!
 from ex_2_task_1 import is_valid_email_address as is_valid 
 
+# this function was support to return 2 things, a return code (or None) and a error string
+s = "Chris@bla.com"
+ret_code, err_str = is_valid()
+if ret_code == None:
+    print(s, "was OK")
+else:
+    print("error", ret_code, "with", s, ":", err_str) 
 
+
+gave_up = False
+attempts_left = 3
 
 # your code - start
 
-def validate_login(s):
-    gave_up = False
-    attempts_left = 3
+count = 1
+
+while count <= 3:
+    print("Please enter your email address.")
+    s = input()
     print("Thank you, now checking for validity of", s)
-    r = is_valid(s)
-    if r == None:
-        print("Validity check is successful.")
-        return True
-    else:
-        while attempts_left != 0 and r != None: #it says there is a problem here but I don't understand why.
-            print(r)
-            s = input("Please re-enter your email address: ")
-            attempts_left = attempts_left - 1
-            r = is_valid(s)
-            if r == None:
-                print("Validity check is successful.")
-                return True
-        else: 
-            print("Sorry, you have run out of trials. You can exit now.")
-            return False
+    is_valid(s) #CH: do the check, but don't catch the result, so this is pointless
+    if is_valid(s) == "Valid email address! Thank you.": # OK in theory (do something based on result) but then we just go on instead of bailing out with break
+        print("Validity check is done.")
+    while is_valid(s) != "Valid email address! Thank you.":  # loop until the result is valid
+        print("Please try again.")
+        count = count + 1  # OK but where's the check that we're <=3 ?
+    else: 
+        print("Sorry, you have run out of trials. You can exit now.") # Gain, use break to bail out
 
-#s = input("Please enter your email address: ")
-#s = "pi@gmail.com"
-#e = validate_login(s)
 
-#print(e)
 
-def validate_login_v2(attempts_left=3):
-    #attempts_left = 3
-    while True:
-        s = input("Please enter your email address: ")
-
-        #evaluating r, bail out if correct
-        r = is_valid(s)
-        if r == None:
-            print("Validity check is successful.")
-            return s
-        attempts_left -= 1
-        print(r, "attempts left:", attempts_left)
-        
-        #bail out when no attempt left
-        if attempts_left == 0:
-            return None
-
-print(validate_login_v2(5))
 
 # your code - end
-#if not gave_up:
-#    print("valid email", email)
-#else:
-#    print("invalid email", email)
+if not gave_up:
+    print("valid email", email)
+else:
+    print("invalid email", email)
